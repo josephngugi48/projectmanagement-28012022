@@ -16,9 +16,13 @@ use App\Http\Controllers\ProjectAPIController;
 |
 */
 
-Route::get('/projects/all', [ProjectAPIController::class, 'index']);
+Route::get('/projects/{id}', [ProjectAPIController::class, 'index']);
 
 Route::post('/projects/all', [ProjectAPIController::class, 'store']);
+
+Route::get('/projects/country/{id}', [ProjectAPIController::class, 'showCountry']); 
+
+Route::get('/projects/ApprovalStatus/{id}', [ProjectAPIController::class, 'approvalStatus']); 
 
 /*Route::post('/projects', function() {
     return Project::create([
