@@ -23,5 +23,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/addproject', [ProjectController::class, 'store']);
+Route::post('/submitproject', [ProjectController::class, 'saveData']);
 // viewprojects
 Route::get('/viewprojects', [ProjectController::class, 'show']);

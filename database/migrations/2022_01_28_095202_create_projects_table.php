@@ -28,12 +28,12 @@ class CreateProjectsTable extends Migration
             $table->string('projectid');
             $table->string('projecttitle');
             $table->string('paascode');
-            $table->string('pagvalue');
+            $table->decimal('pagvalue', 12, 2)->default('0.00');
             $table->string('donors');
-            $table->string('totalexpenditure');
-            $table->string('totalcontribution');
-            $table->string('totalcontribution_totalexpenditure');
-            $table->string('totalpsc');
+            $table->decimal('totalexpenditure', 12, 2)->default('0.00');
+            $table->decimal('totalcontribution', 12, 2)->default('0.00');
+            $table->decimal('totalcontribution_totalexpenditure', 12, 2)->default('0.00');
+            $table->string('totalpsc')->default('0.00');
             $table->datetime('startdate')->default('0000-00-00 00:00:00');
             $table->datetime('enddate')->default('0000-00-00 00:00:00');
             $table->timestamps();

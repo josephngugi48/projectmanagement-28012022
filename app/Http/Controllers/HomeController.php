@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class HomeController extends Controller
 {
@@ -23,6 +25,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+    //
+    $countryprojects = DB::table('projects')
+        ->select('status_id', 'projectid', 'projecttitle', 'paascode', 'pagvalue', 'donors', 'totalexpenditure', 'totalcontribution', 'totalcontribution_totalexpenditure')
+        ->groupByRaw('projects.country_id')
+        ->get();   
+
+    return view('home', ['countryprojects' => $countryprojects]);
     }
 }

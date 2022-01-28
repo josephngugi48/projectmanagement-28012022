@@ -13,14 +13,14 @@
 
             <div class="be-content">
 				<div class="main-content container-fluid">
-					<div class="row">
+					<div class="row"> 
 						<div class="col-sm-12">
 							<div class="card card-table card-border-color card-border-color-primary">
 								<div class="card-header">
 									<div class="title text-primary text-bold">Add Project</div>
 								</div>
 								<div class="card-body">
-									<form method="POST" action="submituser">
+									<form method="POST" action="submitproject">
 			                        @csrf
 			                        @if ($message = Session::get('success'))
 			                        <div class="row px-4" >
@@ -33,11 +33,11 @@
 			                        <div class="row px-4" >
 			                        	<div class="col-sm-4" >
 				                        	<div class="form-group">
-											    <label for="name" class="col-form-label text-md-right">{{ __('Project Title') }}</label>
+											    <label for="pname" class="col-form-label text-md-right">{{ __('Project Title') }}</label>
 
-										        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
+										        <input id="pname" type="text" class="form-control @error('pname') is-invalid @enderror" name="pname" value="{{ old('pname') }}" autocomplete="pname" autofocus>
 
-										        @error('name')
+										        @error('pname')
 										            <span class="invalid-feedback" role="alert">
 										                <strong>{{ $message }}</strong>
 										            </span>
@@ -48,9 +48,9 @@
 				                        	<div class="form-group">
 											    <label for="name" class="col-form-label text-md-right">{{ __('Project Code') }}</label>
 
-										        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
+										        <input id="pcode" type="text" class="form-control @error('pcode') is-invalid @enderror" name="pcode" value="{{ old('pcode') }}" autocomplete="pcode" autofocus>
 
-										        @error('name')
+										        @error('pcode')
 										            <span class="invalid-feedback" role="alert">
 										                <strong>{{ $message }}</strong>
 										            </span>
@@ -59,11 +59,11 @@
 										</div>
 										<div class="col-sm-4" >
 				                        	<div class="form-group">
-											    <label for="name" class="col-form-label text-md-right">{{ __('PAAS CODE') }}</label>
+											    <label for="paascode" class="col-form-label text-md-right">{{ __('PAAS CODE') }}</label>
 
-										        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
+										        <input id="paascode" type="text" class="form-control @error('paascode') is-invalid @enderror" name="paascode" value="{{ old('paascode') }}" autocomplete="paascode" autofocus>
 
-										        @error('name')
+										        @error('paascode')
 										            <span class="invalid-feedback" role="alert">
 										                <strong>{{ $message }}</strong>
 										            </span>
@@ -75,11 +75,11 @@
 									<div class="row px-4" >
 			                        	<div class="col-sm-4" >
 				                        	<div class="form-group">
-											    <label for="name" class="col-form-label text-md-right">{{ __('PAG Value') }}</label>
+											    <label for="pagvalue" class="col-form-label text-md-right">{{ __('PAG Value') }}</label>
 
-										        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
+										        <input id="pagvalue" type="text" class="form-control @error('pagvalue') is-invalid @enderror" name="pagvalue" value="{{ old('pagvalue') }}" autocomplete="pagvalue" autofocus>
 
-										        @error('name')
+										        @error('pagvalue')
 										            <span class="invalid-feedback" role="alert">
 										                <strong>{{ $message }}</strong>
 										            </span>
@@ -88,11 +88,11 @@
 										</div>
 										<div class="col-sm-4" >
 				                        	<div class="form-group">
-											    <label for="name" class="col-form-label text-md-right">{{ __('Donor') }}</label>
+											    <label for="donor" class="col-form-label text-md-right">{{ __('Donor') }}</label>
 
-										        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
+										        <input id="donor" type="text" class="form-control @error('donor') is-invalid @enderror" name="donor" value="{{ old('donor') }}" autocomplete="donor" autofocus>
 
-										        @error('name')
+										        @error('donor')
 										            <span class="invalid-feedback" role="alert">
 										                <strong>{{ $message }}</strong>
 										            </span>
@@ -101,11 +101,11 @@
 										</div>
 										<div class="col-sm-4" >
 				                        	<div class="form-group">
-											    <label for="name" class="col-form-label text-md-right">{{ __('Theme') }}</label>
+											    <label for="theme" class="col-form-label text-md-right">{{ __('Theme') }}</label>
 
-										        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
+										        <input id="theme" type="text" class="form-control @error('theme') is-invalid @enderror" name="theme" value="{{ old('theme') }}" autocomplete="theme" autofocus>
 
-										        @error('name')
+										        @error('theme')
 										            <span class="invalid-feedback" role="alert">
 										                <strong>{{ $message }}</strong>
 										            </span>
@@ -119,9 +119,22 @@
 				                        	<div class="form-group">
 											    <label for="name" class="col-form-label text-md-right">{{ __('Project Expenditure') }}</label>
 
-										        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
+										        <input id="projectexp" type="text" class="form-control @error('projectexp') is-invalid @enderror" name="projectexp" value="{{ old('projectexp') }}" autocomplete="projectexp" autofocus>
 
-										        @error('name')
+										        @error('projectexp')
+										            <span class="invalid-feedback" role="alert">
+										                <strong>{{ $message }}</strong>
+										            </span>
+										        @enderror
+											</div>
+										</div>
+										<div class="col-sm-4" > 
+				                        	<div class="form-group">
+											    <label for="projectcont" class="col-form-label text-md-right">{{ __('Project Contribution') }}</label>
+
+										        <input id="projectcont" type="text" class="form-control @error('projectcont') is-invalid @enderror" name="projectcont" value="{{ old('projectcont') }}" autocomplete="projectcont" autofocus>
+
+										        @error('projectcont')
 										            <span class="invalid-feedback" role="alert">
 										                <strong>{{ $message }}</strong>
 										            </span>
@@ -130,24 +143,11 @@
 										</div>
 										<div class="col-sm-4" >
 				                        	<div class="form-group">
-											    <label for="name" class="col-form-label text-md-right">{{ __('Project Contribution') }}</label>
+											    <label for="projectcontexp" class="col-form-label text-md-right">{{ __('Project Contribution - Project Expenditure') }}</label>
 
-										        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
+										        <input id="projectcontexp" type="text" class="form-control @error('projectcontexp') is-invalid @enderror" name="projectcontexp" value="{{ old('projectcontexp') }}" autocomplete="projectcontexp" autofocus>
 
-										        @error('name')
-										            <span class="invalid-feedback" role="alert">
-										                <strong>{{ $message }}</strong>
-										            </span>
-										        @enderror
-											</div>
-										</div>
-										<div class="col-sm-4" >
-				                        	<div class="form-group">
-											    <label for="name" class="col-form-label text-md-right">{{ __('Project Contribution - Project Expenditure') }}</label>
-
-										        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
-
-										        @error('name')
+										        @error('projectcontexp')
 										            <span class="invalid-feedback" role="alert">
 										                <strong>{{ $message }}</strong>
 										            </span>
