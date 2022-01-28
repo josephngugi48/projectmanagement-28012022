@@ -16,9 +16,9 @@ use App\Http\Controllers\ProjectAPIController;
 |
 */
 
-Route::get('/projects/all', [ProjectAPIController::class, 'index']]);
+Route::get('/projects/all', [ProjectAPIController::class, 'index']);
 
-Route::post('/projects/all', [ProjectAPIController::class, 'store']]);
+Route::post('/projects/all', [ProjectAPIController::class, 'store']);
 
 /*Route::post('/projects', function() {
     return Project::create([
