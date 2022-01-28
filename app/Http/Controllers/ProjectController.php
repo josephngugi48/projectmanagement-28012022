@@ -51,15 +51,15 @@ class ProjectController extends Controller
         'fund_id',
         'country_id',
         'leadorgunit_id',
-        'themes_id'*/
+        'theme_id'*/
 
         $front = new Project;
         $front->projecttitle = $req->pname;
         $front->projectid = $req->pcode;
          $front->paascode = $req->paascode;
         $front->pagvalue = $req->pagvalue;
-        $front->donor = $req->donor;
-        $front->themes_id = $req->theme;
+        $front->donors = $req->donor;
+        $front->theme_id = $req->theme;
         $front->totalexpenditure = $req->projectexp;
         $front->totalcontribution = $req->projectcont;
         $front->totalcontribution_totalexpenditure = $req->projectcontexp;

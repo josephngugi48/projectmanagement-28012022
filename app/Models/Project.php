@@ -9,7 +9,7 @@ class Project extends Model
 {
     use HasFactory;
 
-    protected $table = 'projects';
+    //protected $table = 'projects';
 
     protected $fillable = [
         'projectid',
@@ -18,16 +18,16 @@ class Project extends Model
         'pagvalue',
         'startdate',
         'enddate',
-        'donor',
+        'donors',
         'totalexpenditure',
         'totalcontribution',
-        'totalcontribution_totalexpenditure'
-        'totalpsc'
-        'status_id'
+        'totalcontribution_totalexpenditure',
+        'totalpsc',
+        'status_id',
         'fund_id',
         'country_id',
         'leadorgunit_id',
-        'themes_id'
+        'theme_id',
     ];
     
 }
