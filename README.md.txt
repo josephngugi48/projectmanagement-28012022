@@ -60,12 +60,12 @@ Request Type: GET Request
 URL: http://127.0.0.1:8000/api/projects/{id}
 Note: The {id} can be numeric (1, 2, 3, etc.), string (All) or Blank  
 Get Project(s) Request Method Name: projects/{id}
-2. GET Project(s)
+2. GET Project(s) by country - Kenya
 Request Type: GET Request 
 URL: http://127.0.0.1:8000/api/projects/country/{id}
 Note: The {id} can be numeric (1, 2, 3, etc.), string (Kenya, Somalia, GLOBAL), Blank  
 Get Country(s) Request Method Name: country/{id}
-3. GET Project(s)
+3. GET Project(s) by status - Approved
 Request Type: GET Request 
 URL: http://127.0.0.1:8000/api/projects/ApprovalStatus/{id}
 Note: The {id} can be numeric (1, 2, 3, etc.), string (Kenya, Somalia, GLOBAL), Blank  
