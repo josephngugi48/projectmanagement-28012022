@@ -14,13 +14,17 @@ iv.  $ php artisan key:generate
 Running Locally
 * The project is already configured with Laravel, and it is the recommend way to run it locally.
 * The followign services are already configured and available in localhost:.
-Service
-Port
-MySQL
-3306
-PhpMyAdmin
-80
-* Run below SQL queries to create the system default table items (i.e. Country, Org units, Project Status, Themes, Users, Funds)
+Service     Port
+MySQL       3306
+PhpMyAdmin  80
+
+Note: 
+- Make sure to update composer if necessary (Use commands: composer install or composer update)
+- Make sure your PC has PHP version 8 installed (You can use the link to download: https://windows.php.net/download/). You can check your php version via command: php -v
+- The Application is running on Laravel 8 
+- 
+
+* Run below SQL queries to create the system default table items (i.e. Country, Org units, Project Status, Themes, Users, Funds), incase there is no records 
 -- Country: 
 INSERT INTO `countries` (`id`, `countryname`, `countrycode`, `created_at`, `updated_at`) VALUES
 (1, 'GLOBAL', '', NULL, NULL),
