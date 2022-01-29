@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectAPIController;
 
+//use App\Models\Project;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,22 +27,22 @@ Route::get('/projects/ApprovalStatus/{id}', [ProjectAPIController::class, 'appro
 
 /*Route::post('/projects', function() {
     return Project::create([
-        'projectid' => '1001',
+        'projectid' => '1002',
         'projecttitle' => 'FSGLO10S05:Youth Empowerment for Urban Development',
         'paascode' => 'H139',
-        'pagvalue' => '5,218,607',
+        'pagvalue' => '5218607.00',
         'startdate' => '01-Jan-12',
         'enddate' => '01-Dec-13',
         'donor' => 'BASF Stiftung, PM of Norway to the United Nations, The Palestinian Ministry of Public Works and Housing, , GROUP OF SPONSORS, PM OF NORWAY TO THE UNITED NATIONS',
-        'totalexpenditure' => '5,439,757',
-        'totalcontribution' => '5,329,257',
-        'totalcontribution_totalexpenditure' => '-110,500',
-        'totalpsc' => '316,548',
+        'totalexpenditure' => '5439757',
+        'totalcontribution' => '5329257',
+        'totalcontribution_totalexpenditure' => '-110500',
+        'totalpsc' => '316548',
         'status_id' => '1',
-        'fund_id' => '2',
-        'country_id' => '3',
-        'leadorgunit_id' => '1',
-        'themes_id' => '2'
+        'fund_id' => '1',
+        'country_id' => '2',
+        'leadorgunit_id' => '2',
+        'themes_id' => '1'
     ]);
 });*/
 

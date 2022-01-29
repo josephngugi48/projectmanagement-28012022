@@ -24,5 +24,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/addproject', [ProjectController::class, 'store']);
 Route::post('/submitproject', [ProjectController::class, 'saveData']);
+
 // viewprojects
 Route::get('/viewprojects', [ProjectController::class, 'show']);
+Route::delete('/viewprojects/{id}', ['as' => 'viewprojects.destroy', 'uses' => 'ProjectController@destroy', 'middleware' => ['auth']]);

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand fixed-top be-top-header shadow-sm bg-primary text-white">
+<nav class="navbar navbar-expand fixed-top be-top-header shadow-sm bg-primary text-white mb-4">
     <div class="container">
         <a class="navbar-brand text-white" href="{{ url('/') }}">
             {{ config('app.name', 'Muthaiga Country Club') }}

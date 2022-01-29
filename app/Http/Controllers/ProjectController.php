@@ -80,7 +80,7 @@ class ProjectController extends Controller
     {
         //
         $projects = DB::table('projects')
-            ->select('status_id', 'projectid', 'projecttitle', 'paascode', 'pagvalue', 'donors', 'totalexpenditure', 'totalcontribution', 'totalcontribution_totalexpenditure')
+            ->select('projects.id', 'status_id', 'projectid', 'projecttitle', 'paascode', 'pagvalue', 'donors', 'totalexpenditure', 'totalcontribution', 'totalcontribution_totalexpenditure', 'created_at')
             ->where('projects.id','>','0')
             ->get();       
 
@@ -105,8 +105,19 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $req, $id)
     {
         //
+        $id=$id;
+
+        $delusers = DB::table('projects')->where('id', '=', $id)->delete(); 
+
+        $projects = DB::table('projects')
+            ->select('projects.id', 'status_id', 'projectid', 'projecttitle', 'paascode', 'pagvalue', 'donors', 'totalexpenditure', 'totalcontribution', 'totalcontribution_totalexpenditure', 'created_at')
+            ->where('projects.id','>','0')
+            ->get();
+
+        //return view('layouts.registered', ['members' => $members]); 
+        return back()->with('success','Record successfully deleted.');
     }
 }

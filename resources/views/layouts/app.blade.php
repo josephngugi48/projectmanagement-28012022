@@ -28,7 +28,7 @@
     <div id="app">
         @include('layouts.include.header')
 
-        <main class="py-2">
+        <main class="py-2" style="margin-top:70px;">
             @yield('content')
         </main>
     </div>
@@ -57,7 +57,12 @@
     <script type="text/javascript" src="{{asset('dist/datatables/datatables.net-buttons/js/buttons.print.min.js')}}" ></script>
     <script type="text/javascript" src="{{asset('dist/datatables/datatables.net-buttons/js/buttons.html5.min.js')}}" ></script>
 
-    <script src="{{asset('dist/js/html5-qrcode.min.js')}}"></script>
-    <script src="{{asset('dist/js/jquery.niftymodals/js/jquery.niftymodals.js')}}" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+        App.init();
+        $.fn.DataTable.ext.pager.numbers_length=4,$.extend(!0,$.fn.dataTable.defaults,{dom:"<'row be-datatable-header'<'col-sm-6'l><'col-sm-6'f>><'row be-datatable-body'<'col-sm-12'tr>><'row be-datatable-footer'<'col-sm-5'i><'col-sm-7'p>>"}),$("#table1").dataTable({buttons:["excel","pdf","print"],columnDefs: [{ "searchable": true, "targets": 0 }],lengthMenu:[[10,50,100,150,-1],[10,50,100,150,"All"]],dom:"<'row be-datatable-header'<'col-sm-6'l><'col-sm-6 text-right'B>><'row be-datatable-body'<'col-sm-12'tr>><'row be-datatable-footer'<'col-sm-5'i><'col-sm-7'p>>"});
+
+        });
+    </script>
 </body>
 </html>
