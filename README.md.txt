@@ -1,20 +1,30 @@
-Install
-1. Clone the repository $ git clone git@github.com:josephngugi48/projectmanagement-28012022.git
-2. Install the composer and npm dependencies $ composer install $ yarn install
-3. Copy the provided .env file $ cp .env.example .env {create database locally}
-4. Run $ php artisan migrate
-5. Setup your app key $ php artisan key:generate
-6. Start sail $ php artisan run serve
-7. Incase of any installation error, try running: 
-i. $ composer install (make sure you have composer in your machine/server), 
-ii. $ composer update , 
-iii.  $ php artisan migrate
-iv.  $ php artisan key:generate
+#Install
+1. Clone the repositoryÂ $ git clone git@github.com:josephngugi48/projectmanagement-28012022.git
+2. Install the composer and npm dependenciesÂ $ composer installÂ $ yarn install
+3. Copy the provided .env fileÂ $ cp .env.example .env {create database locally}
+4. RunÂ $ php artisan migrate
+5. Setup your app keyÂ $ php artisan key:generate
+6. Start sailÂ $ php artisan run serve
+7. Incase of any installation error, try running:Â 
+i. $ composer install (make sure you have composer in your machine/server),Â 
+ii. $Â composer update ,Â 
+iii. Â $ php artisan migrate
+iv. Â $ php artisan key:generate
 8. 
 Running Locally
 * The project is already configured with Laravel, and it is the recommend way to run it locally.
 * The followign services are already configured and available in localhost:.
-ServicePortMySQL3306PhpMyAdmin80* Run below SQL queries to create the system default table items (i.e. Country, Org units, Project Status, Themes, Users, Funds)
+Service     Port
+MySQL       3306
+PhpMyAdmin  80
+
+Note: 
+- Make sure to update composer if necessary (Use commands: composer install or composer update)
+- Make sure your PC has PHP version 8 installed (You can use the link to download: https://windows.php.net/download/). You can check your php version via command: php -v
+- The Application is running on Laravel 8 
+- 
+
+* Run below SQL queries to create the system default table items (i.e. Country, Org units, Project Status, Themes, Users, Funds), incase there is no records 
 -- Country: 
 INSERT INTO `countries` (`id`, `countryname`, `countrycode`, `created_at`, `updated_at`) VALUES
 (1, 'GLOBAL', '', NULL, NULL),
@@ -54,12 +64,12 @@ Request Type: GET Request
 URL: http://127.0.0.1:8000/api/projects/{id}
 Note: The {id} can be numeric (1, 2, 3, etc.), string (All) or Blank  
 Get Project(s) Request Method Name: projects/{id}
-2. GET Project(s)
+2. GET Project(s) by country - Kenya
 Request Type: GET Request 
 URL: http://127.0.0.1:8000/api/projects/country/{id}
 Note: The {id} can be numeric (1, 2, 3, etc.), string (Kenya, Somalia, GLOBAL), Blank  
 Get Country(s) Request Method Name: country/{id}
-3. GET Project(s)
+3. GET Project(s) by status - Approved
 Request Type: GET Request 
 URL: http://127.0.0.1:8000/api/projects/ApprovalStatus/{id}
 Note: The {id} can be numeric (1, 2, 3, etc.), string (Kenya, Somalia, GLOBAL), Blank  
