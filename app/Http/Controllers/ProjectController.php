@@ -18,10 +18,26 @@ class ProjectController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
-        //return view('layouts.addproject');
-    }
+        {
+        // 
+        $themes = DB::table('themes')
+            ->select('themes.id', 'themetitle', 'created_at')
+            ->get(); 
+
+        $orgunits = DB::table('org_units')
+            ->select('org_units.id', 'orgunit', 'created_at')
+            ->get(); 
+
+        $funds = DB::table('funds')
+            ->select('funds.id', 'fundscode', 'created_at')
+            ->get(); 
+
+        $countries = DB::table('countries')
+            ->select('countries.id', 'countryname', 'created_at')
+            ->get(); 
+
+        return view('layouts.addproject', ['themes' => $themes, 'orgunits' => $orgunits, 'funds' => $funds, 'countries' => $countries]);
+        }
 
     /**
      * Store a newly created resource in storage.
@@ -32,12 +48,17 @@ class ProjectController extends Controller
     public function store(Request $req)
     {
         //
-        //
         $req->validate([
-            // pname, pcode,  projectcontexp, paascode, pagvalue, donor, theme, projectexp, projectcont
         'pname'=> ['required'], 
         'paascode'=> ['required'],
         'pcode'=> ['required', 'string', 'min:4'],
+        'pagvalue'=> ['required'],
+        'donor'=> ['required'],
+        'theme'=> ['required', 'integer','min:1'],
+        'projectexp'=> ['required'],
+        'projectcont'=> ['required'],
+        'projectcontexp'=> ['required'],
+        //'startdate'=> ['required'],
         ]);
 
         $user_id = Auth::user()->id;
@@ -56,7 +77,7 @@ class ProjectController extends Controller
         $front = new Project;
         $front->projecttitle = $req->pname;
         $front->projectid = $req->pcode;
-         $front->paascode = $req->paascode;
+        $front->paascode = $req->paascode;
         $front->pagvalue = $req->pagvalue;
         $front->donors = $req->donor;
         $front->theme_id = $req->theme;
@@ -66,8 +87,8 @@ class ProjectController extends Controller
         $front->created_at = $datetime; 
         $front->save(); 
 
-        //return back()->with('success','Record successfully edited.');
-        return view('layouts.addproject');
+        return back()->with('success','Record successfully edited.');
+        //return view('layouts.addproject');
     }
 
     /**

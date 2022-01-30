@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand fixed-top be-top-header shadow-sm bg-primary text-white mb-4">
     <div class="container">
         <a class="navbar-brand text-white" href="{{ url('/') }}">
-            {{ config('app.name', 'Muthaiga Country Club') }}
+            {{ config('app.name', 'PROJECT MANAGEMENT APP') }}
         </a>
         <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>

@@ -16,7 +16,7 @@
               <div class="col-sm-12">
                 <div class="card card-table card-border-color card-border-color-primary">
                   <div class="card-header">
-                    <div class="title text-primary text-bold">System Users</div>
+                    <div class="title text-primary text-bold">Projects List</div>
                   </div>
                   <div class="card-body table-responsive">
                     <table class="table table-striped table-borderless" id="table1">

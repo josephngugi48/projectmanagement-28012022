@@ -77,7 +77,7 @@
 				                        	<div class="form-group">
 											    <label for="pagvalue" class="col-form-label text-md-right">{{ __('PAG Value') }}</label>
 
-										        <input id="pagvalue" type="text" class="form-control @error('pagvalue') is-invalid @enderror" name="pagvalue" value="{{ old('pagvalue') }}" autocomplete="pagvalue" autofocus>
+										        <input id="pagvalue" type="number" min="1" step="any" class="form-control @error('pagvalue') is-invalid @enderror" name="pagvalue" value="{{ old('pagvalue') }}" autocomplete="pagvalue" autofocus>
 
 										        @error('pagvalue')
 										            <span class="invalid-feedback" role="alert">
@@ -103,7 +103,12 @@
 				                        	<div class="form-group">
 											    <label for="theme" class="col-form-label text-md-right">{{ __('Theme') }}</label>
 
-										        <input id="theme" type="text" class="form-control @error('theme') is-invalid @enderror" name="theme" value="{{ old('theme') }}" autocomplete="theme" autofocus>
+										        <select class="form-control @error('theme') is-invalid @enderror" name="theme">
+										        	<option value="0" > -- </option>
+													@foreach($themes as $theme)
+													<option value="{{ $theme->id }}" @if(old('theme')&&old('theme')== $theme->id) selected='selected' @endif >{{ $theme->themetitle }}</option>
+													@endforeach
+												</select>
 
 										        @error('theme')
 										            <span class="invalid-feedback" role="alert">
@@ -119,7 +124,7 @@
 				                        	<div class="form-group">
 											    <label for="name" class="col-form-label text-md-right">{{ __('Project Expenditure') }}</label>
 
-										        <input id="projectexp" type="text" class="form-control @error('projectexp') is-invalid @enderror" name="projectexp" value="{{ old('projectexp') }}" autocomplete="projectexp" autofocus>
+										        <input id="projectexp" type="number" min="1" step="any" class="form-control @error('projectexp') is-invalid @enderror" name="projectexp" value="{{ old('projectexp') }}" autocomplete="projectexp" autofocus>
 
 										        @error('projectexp')
 										            <span class="invalid-feedback" role="alert">
@@ -132,7 +137,7 @@
 				                        	<div class="form-group">
 											    <label for="projectcont" class="col-form-label text-md-right">{{ __('Project Contribution') }}</label>
 
-										        <input id="projectcont" type="text" class="form-control @error('projectcont') is-invalid @enderror" name="projectcont" value="{{ old('projectcont') }}" autocomplete="projectcont" autofocus>
+										        <input id="projectcont" type="number" min="1" step="any" class="form-control @error('projectcont') is-invalid @enderror" name="projectcont" value="{{ old('projectcont') }}" autocomplete="projectcont" autofocus>
 
 										        @error('projectcont')
 										            <span class="invalid-feedback" role="alert">
@@ -145,7 +150,7 @@
 				                        	<div class="form-group">
 											    <label for="projectcontexp" class="col-form-label text-md-right">{{ __('Project Contribution - Project Expenditure') }}</label>
 
-										        <input id="projectcontexp" type="text" class="form-control @error('projectcontexp') is-invalid @enderror" name="projectcontexp" value="{{ old('projectcontexp') }}" autocomplete="projectcontexp" autofocus>
+										        <input id="projectcontexp" type="number" min="1" step="any" class="form-control @error('projectcontexp') is-invalid @enderror" name="projectcontexp" value="{{ old('projectcontexp') }}" autocomplete="projectcontexp" autofocus>
 
 										        @error('projectcontexp')
 										            <span class="invalid-feedback" role="alert">
@@ -161,9 +166,14 @@
 				                        	<div class="form-group">
 											    <label for="name" class="col-form-label text-md-right">{{ __('Project Country') }}</label>
 
-										        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
+										        <select class="form-control @error('countryid') is-invalid @enderror" name="countryid">
+										        	<option value="0" > -- </option>
+													@foreach($countries as $country)
+													<option value="{{ $country->id }}">{{ $country->countryname }}</option>
+													@endforeach
+												</select>
 
-										        @error('name')
+										        @error('countryid')
 										            <span class="invalid-feedback" role="alert">
 										                <strong>{{ $message }}</strong>
 										            </span>
@@ -187,9 +197,14 @@
 				                        	<div class="form-group">
 											    <label for="name" class="col-form-label text-md-right">{{ __('Project Lead Unit') }}</label>
 
-										        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
+										        <select class="form-control @error('projectleadid') is-invalid @enderror" name="projectleadid">
+										        	<option value="0" > -- </option>
+													@foreach($orgunits as $orgunit)
+													<option value="{{ $orgunit->id }}">{{ $orgunit->orgunit }}</option>
+													@endforeach
+												</select>
 
-										        @error('name')
+										        @error('projectleadid')
 										            <span class="invalid-feedback" role="alert">
 										                <strong>{{ $message }}</strong>
 										            </span>
